@@ -17,3 +17,8 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.poppins-font {
+  font-family: "Poppins", serif;
+  font-style: normal;
+}
