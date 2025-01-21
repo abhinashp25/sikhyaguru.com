@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../common/Button";
 
 const AdmissionGuide = () => {
   const steps = [
@@ -37,7 +38,7 @@ const AdmissionGuide = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-black  via-blue-950 to-purple-700 text-white py-10 overflow-hidden  ">
+    <section className="bg-gray-200 py-10 overflow-hidden  ">
       <div className=" px-6 md:px-10">
         {/* Title */}
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
@@ -53,45 +54,33 @@ const AdmissionGuide = () => {
             <div
               data-aos={step.animation}
               key={step.id}
-              className={`flex   items-center gap-4 shadow-md bg-gradient-to-br from-black  via-blue-950 to-purple-900 p-6 rounded-lg ${
+              className={`flex   items-center gap-4 shadow-md bg-slate-100 p-6 rounded-lg ${
                 index % 2 === 1 ? "" : ""
               }`}
             >
               {/* Step Number */}
-              <div className="flex-shrink-0 relative -top-7 ">
-                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-br from-black  via-blue-950 to-purple-700 text-white font-bold rounded-full">
+              <div className="flex-shrink-0 relative -top-8 ">
+                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-br from-blue-700  via-blue-900 to-blue-700 text-white font-bold rounded-full">
                   {step.id}
                 </div>
               </div>
               {/* Step Details */}
               <div>
-                <h3 className="text-lg md:text-xl font-semibold mb-2">
+                <h3 className="text-lg md:text-xl text-gray-800  font-semibold mb-2">
                   {step.title}
                 </h3>
-                <p className="text-gray-300 mb-4 text-sm md:text-md ">{step.description}</p>
-                <button className="bg-gradient-to-br from-black  via-blue-950 to-purple-700 float-right text-sm text-gray-200 px-4 py-2 rounded hover:bg-purple-700">
+                <p className="text-gray-600 mb-4 text-sm md:text-md ">{step.description}</p>
+                <button className="bg-gradient-to-br from-blue-700  via-blue-900 to-blue-700 float-right text-sm text-gray-200 px-4 py-2 rounded hover:bg-purple-700">
                   {step.buttonText}
                 </button>
+                
               </div>
             </div>
           ))}
         </div>
 
-        {/* Assistance Section */}
-        <div data-aos="fade-up" className="mt-12 text-center bg-gradient-to-br from-black  via-blue-950 to-purple-700 py-6 px-4 rounded-lg">
-          <p className="text-lg font-semibold text-gray-200 mb-4">
-            Need Assistance? Our admission counselors are here to guide you
-            through every step.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-purple-700 px-4 py-2 rounded hover:bg-gray-200">
-              Call Now
-            </button>
-            <button className="bg-black text-white border border-white px-4 py-2 rounded hover:bg-gray-800">
-              Chat with Counselor
-            </button>
-          </div>
-        </div>
+       
+        
       </div>
     </section>
   );

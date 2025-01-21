@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import College from './components/college/College';
+
 import Layout from './pages/Layout';
 import About from './pages/About';
 import Home from './pages/Home';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import CollegeList from './components/college/CollegeList';
+
 
 
 function App() {
@@ -28,7 +30,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />} >
         <Route path="" element={<Home/>} />
-        <Route path="colleges/:collegeId" element={<College/>} />
+        <Route path="colleges" element={<CollegeList/>} />
+       
         <Route path="about" element={<About/>} />
       </Route>
     </Routes>
