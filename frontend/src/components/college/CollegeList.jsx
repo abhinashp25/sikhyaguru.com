@@ -203,7 +203,7 @@ function CollegeList() {
   return (
     <div className=" bg-gray-50 w-full px-6 md:px-10 py-6">
       {/* Header */}
-      <header className=" text-black py-4 px-4 md:hidden ">
+      <header className=" text-black py-4  md:hidden ">
         <div className="w-full  flex justify-end items-center">
           
         <button
@@ -222,7 +222,7 @@ function CollegeList() {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Filter Panel */}
           <div className={`
-            fixed lg:sticky  top-0 left-0 h-full w-80 bg-white lg:w-64 
+            fixed lg:sticky  top-0 lg:top-10 left-0 h-full w-80 bg-white lg:w-64 
             transform transition-transform duration-300 ease-in-out z-50
             ${isFilterOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             shadow-xl lg:shadow-md rounded-r-lg lg:rounded-lg
@@ -325,12 +325,12 @@ function CollegeList() {
           <div className="flex-1">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {colleges.map((college, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md p-6 transition-transform ">
-                  <div className="flex items-start gap-4">
+                <div key={index} className="bg-white h-full rounded-lg shadow-md p-6 transition-transform ">
+                  <div className="flex items-start gap-4 h-full">
                     <img
                       src={college.logo}
                       alt={`${college.name} logo`}
-                      className="w-16 h-16 rounded-lg object-cover"
+                      className="w-16 h-16 md:w-28 md:h-full rounded-md object-cover"
                     />
                     <div className="flex-1">
                       <div className="flex justify-between items-start">

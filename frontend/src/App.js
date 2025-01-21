@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import CollegeList from './components/college/CollegeList';
+import College from './components/college/College';
 
 
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/" element={<Layout />} >
         <Route path="" element={<Home/>} />
         <Route path="colleges" element={<CollegeList/>} />
+        <Route path="college" element={<College/>} />
        
         <Route path="about" element={<About/>} />
       </Route>
