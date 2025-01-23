@@ -12,10 +12,11 @@ import NewsSection from '../components/home/NewsSection'
 import PlacementHighlights from '../components/home/PlacementHighlights'
 import HeroSection from '../components/home/HeroSection'
 import ContactUS from '../components/home/ContactUS'
+import HowItWorks from '../components/home/HowItWorks'
 
 const Home = () => {
   return (
-    <div> 
+    <div className='bg-gradient-to-br  from-blue-100 via-purple-200 to-purple-200 text-gray-900'> 
       {/* <CourseSection/> */}
      
       <HeroSection/>
@@ -23,10 +24,11 @@ const Home = () => {
      
       <CompareColleges/>
       <AboutSection/>
+      <HowItWorks/>
       {/* <ContactSection/> */}
       {/* <NewsSection/> */}
       {/* <PlacementHighlights/> */}
-      <ContactUS/>
+      {/* <ContactUS/> */}
       {/* <AboutUs/> */}
 
       {/* <TestimonialSection/> */}

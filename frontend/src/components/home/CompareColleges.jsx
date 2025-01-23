@@ -2,7 +2,7 @@ import React from "react";
 
 const CompareColleges = () => {
   return (
-    <section className="bg-slate-200 shadow-md text-gray-800 py-10 overflow-hidden">
+    <section className="  text-gray-800 py-10 overflow-hidden">
       <div className="px-6 md:px-10">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">

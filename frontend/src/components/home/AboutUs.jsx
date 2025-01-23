@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <section className="relative bg-gradient-to-br from-black via-blue-950 to-purple-700 text-white overflow-hidden">
+    <section className="relative bg-inherit text-white overflow-hidden">
       {/* Animated Background */}
       <div className="absolute top-0 left-0 w-full h-full opacity-20">
         <svg

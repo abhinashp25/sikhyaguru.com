@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../common/Button";
 
 const FAQAccordion = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -36,15 +37,15 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="px-6 md:px-10 py-10 bg-gradient-to-br from-purple-950  via-blue-950 to-purple-900">
-      <div className="max-w-4xl mx-auto my-10 px-6 md:px-10 bg-gradient-to-br from-black  via-blue-950 to-purple-900 lg:shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-100 mb-6 py-5">
+    <div className="px-6 md:px-10 py-10 bg-gradient-to-br  from-blue-100 via-purple-200 to-blue-100 ">
+      <div className=" lg:max-w-4xl mx-auto my-10 py-10 px-6 md:px-10  border border-gray-300    lg:shadow-lg rounded-xl">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6 py-5">
           Frequently Asked Questions
         </h2>
         {faqs.map((faq, index) => (
-          <div key={index} className="border-b border-gray-900">
+          <div key={index} className="border-b border-gray-900 ">
             <button
-              className="w-full text-left py-4 flex justify-between items-center text-gray-200 hover:text-blue-800 focus:outline-none"
+              className="w-full text-left py-4 flex justify-between items-center text-gray-800 hover:text-blue-800 focus:outline-none"
               onClick={() => toggleAccordion(index)}
             >
               <span className="font-medium">{faq.question}</span>
@@ -78,19 +79,30 @@ const FAQAccordion = () => {
 
       <div
         data-aos="fade-up"
-        className="mt-12 text-center bg-gradient-to-br from-black  via-blue-950 to-purple-700 py-6 px-4 rounded-lg"
+        className="mt-12 text-center text-black  py-6 px-4 rounded-lg"
       >
-        <p className="text-lg font-semibold text-gray-200 mb-4">
+        <p className="text-lg font-semibold text-gray-800 mb-4">
           Need Assistance? Our admission counselors are here to guide you
           through every step.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <button className="bg-white text-purple-700 px-4 py-2 rounded hover:bg-gray-200">
+          {/* <button className="bg-white text-purple-700 px-4 py-2 rounded hover:bg-gray-200">
+            Call Now
+          </button> */}
+
+          {/* <Button  title={"Chat with Counselor"}/> */}
+
+          <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg transition">
             Call Now
           </button>
-          <button className="bg-black text-white border border-white px-4 py-2 rounded hover:bg-gray-800">
+          <button className="ml-4 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full shadow-lg transition flex items-center gap-2">
             Chat with Counselor
           </button>
+          {/* <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black hover:text-gray-200 ">Chat with Counselor</button>
+           <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black hover:text-gray-200 ">Chat with Counselor</button> */}
+          {/* <button className="bg-black text-white border border-white px-4 py-2 rounded hover:bg-gray-800">
+            Chat with Counselor
+          </button> */}
         </div>
       </div>
     </div>

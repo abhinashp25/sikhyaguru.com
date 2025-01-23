@@ -5,7 +5,7 @@ import Button from '../common/Button';
 
 const AboutSection = () => {
   return (
-    <section class="py-24 relative bg-slate-50">
+    <section class="py-24 relative ">
     <div class="w-full max-w-7xl px-6 md:px-10 ">
         <div class="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1">
             <div

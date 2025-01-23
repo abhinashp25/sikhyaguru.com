@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Star, MCollegein, GraduationCap, MapPin, Building2, Users, BookOpen, DollarSign, Trophy, Home, Coffee } from 'lucide-react';
 import PlacementHighlights from '../home/PlacementHighlights';
+import CampusFacilities from './components/CampusFaclilities';
 
 function RatingStars({ rating }) {
   return (
@@ -70,7 +71,7 @@ function College() {
   };
 
   return (
-    <div className=" bg-gray-50">
+    <div className=" ">
       {/* Hero Section */}
       <div className="relative h-[600px]">
         <div className="absolute inset-0">
@@ -151,7 +152,9 @@ function College() {
             )
           }
 
-          {activeTab === 'facilities' && (
+          {activeTab === 'facilities' && <CampusFacilities/>}
+          
+          {/* {activeTab === 'facilities' && (
             <div className="grid md:grid-cols-2 gap-6">
               {tabs.facilities.content.map((facility, index) => (
                 <div key={index} className="flex items-center gap-3">
@@ -160,7 +163,7 @@ function College() {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
 
           {activeTab === 'placements' && (
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

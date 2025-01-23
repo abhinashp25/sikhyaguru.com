@@ -8,15 +8,15 @@ const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return (
-      <div className="flex h-screen poppins-font">
+      <div className="flex  w-full poppins-font bg-gradient-to-br  from-blue-100 via-purple-200 to-purple-200">
         {/* Sidebar */}
 
         <SideBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
   
         {/* Main content */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 w-full flex flex-col">
           <Header setIsSidebarOpen={setIsSidebarOpen} />
-           <Outlet/>
+          <Outlet/>
           <Footer/>
         </div>
       </div>

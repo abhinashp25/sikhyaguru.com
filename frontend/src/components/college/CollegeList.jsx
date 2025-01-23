@@ -201,7 +201,7 @@ function CollegeList() {
   };
 
   return (
-    <div className=" bg-gray-50 w-full px-6 md:px-10 py-6">
+    <div className="  w-full  px-6 md:px-10 py-6">
       {/* Header */}
       <header className=" text-black py-4  md:hidden ">
         <div className="w-full  flex justify-end items-center">
@@ -218,7 +218,7 @@ function CollegeList() {
 
       
 
-      <main className="w-full ">
+      <main className="w-full h-full ">
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Filter Panel */}
           <div className={`

@@ -38,7 +38,7 @@ const AdmissionGuide = () => {
   ];
 
   return (
-    <section className="bg-gray-200 py-10 overflow-hidden  ">
+    <section className=" py-10 overflow-hidden  ">
       <div className=" px-6 md:px-10">
         {/* Title */}
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
