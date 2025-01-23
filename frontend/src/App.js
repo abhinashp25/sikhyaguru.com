@@ -17,7 +17,7 @@ function App() {
   const location = useLocation();
   useEffect(() => {
     console.log("I am running");
-    window.scrollTo(600, 0);
+   // window.scrollTo(600, 0);
     AOS.init({
       offset: 100,
       duration: 1000,

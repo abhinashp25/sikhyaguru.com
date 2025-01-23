@@ -3,10 +3,9 @@ import { NavLink } from "react-router-dom";
 import { IoMdCloseCircle } from "react-icons/io";
 
 const routes = [
-  { name: "Dashboard", path: "/" },
+  { name: "Home", path: "/" },
   { name: "College", path: "/college" },
-  { name: "Issues", path: "/issues" },
-  { name: "Notices", path: "/notices" },
+  { name: "Colleges", path: "/colleges" },
 ];
 
 const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
@@ -27,14 +26,14 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       >
         <div>
           <button
-            className="lg:hidden absolute top-2 right-2 text-2xl"
+            className="lg:hidden absolute top-4 right-2 text-2xl"
             onClick={() => setIsSidebarOpen(false)}
           >
             <IoMdCloseCircle />
           </button>
         </div>
         <h2 className="text-3xl font-extrabold text-gray-800 mt-3 text-left px-4 mb-5">
-          <span className="text-orange-400">Sikshya<span className="text-gray-100">Guru</span></span>
+          <span className="text-blue-400">Sikshya<span className="text-gray-100">Guru</span></span>
         </h2>
         
         <ul className="space-y-4 p-4">
@@ -46,7 +45,7 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 to={route.path}
                 
                 className={({ isActive }) =>
-                  `p-2 rounded block ${isActive ? "bg-orange-500 text-white" : "hover:bg-gray-700"
+                  `p-2 rounded block ${isActive ? "bg-blue-500 text-white" : "hover:bg-gray-700"
                   }`
                 }
               >

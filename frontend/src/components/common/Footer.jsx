@@ -42,14 +42,14 @@ const Footer = () => {
 
           <div className="flex space-x-4 mt-4">
             <a
-              href="https://wa.me/+919462049921?text=Hii"
+              href="https://wa.me/+917735381142?text=Hii"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaWhatsapp className="text-gray-100 hover:text-white" />
             </a>
             <a
-              href="https://www.instagram.com/a_g_marketibg_pvt.ltd?igsh=MTNzMGNoNXBuaGo5bA=="
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
             >

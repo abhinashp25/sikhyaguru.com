@@ -6,7 +6,7 @@ import { CiMenuFries } from "react-icons/ci";
 
 const Header = ({ setIsSidebarOpen }) => {
   return (
-    <div className="bg-inherit flex w-full items-center justify-between  px-6 md:px-10 py-3  lg:h-20">
+    <div className=" flex w-full items-center justify-between  px-6 md:px-10 py-3  lg:h-20">
       {/* Hamburger icon for mobile */}
 
       <h2 className="  text-3xl font-extrabold text-gray-800 text-center ">

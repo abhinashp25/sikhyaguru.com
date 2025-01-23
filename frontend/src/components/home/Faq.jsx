@@ -37,7 +37,7 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="px-6 md:px-10 py-10 bg-gradient-to-br  from-blue-100 via-purple-200 to-blue-100 ">
+    <div className="px-6 md:px-10 py-10 bg-gradient-to-br  from-purple-200 via-blue-200 to-purple-200 ">
       <div className=" lg:max-w-4xl mx-auto my-10 py-10 px-6 md:px-10  border border-gray-300    lg:shadow-lg rounded-xl">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6 py-5">
           Frequently Asked Questions
@@ -67,7 +67,7 @@ const FAQAccordion = () => {
               </svg>
             </button>
             {activeIndex === index && (
-              <div className="px-4 pb-4 text-gray-400">
+              <div className="px-4 pb-4 text-gray-700">
                 <p>{faq.answer}</p>
               </div>
             )}
@@ -79,7 +79,7 @@ const FAQAccordion = () => {
 
       <div
         data-aos="fade-up"
-        className="mt-12 text-center text-black  py-6 px-4 rounded-lg"
+        className="mt-12 text-center bg-gradient-to-br  from-purple-300 via-blue-200 to-purple-300 text-black  py-6 px-4 rounded-lg"
       >
         <p className="text-lg font-semibold text-gray-800 mb-4">
           Need Assistance? Our admission counselors are here to guide you
@@ -90,16 +90,37 @@ const FAQAccordion = () => {
             Call Now
           </button> */}
 
-          {/* <Button  title={"Chat with Counselor"}/> */}
+          {/*
 
           <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg transition">
             Call Now
           </button>
           <button className="ml-4 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-full shadow-lg transition flex items-center gap-2">
             Chat with Counselor
+          </button> */}
+
+          
+
+          <a
+            href="https://wa.me/+917735381142?text=Hii"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button title={"Call Now"} />
+          </a>
+          {/* <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black hover:text-gray-200 ">Call Now</button> */}
+          
+
+          <a
+            href="https://wa.me/+917735381142?text=Hii I am Intersted to join College"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black hover:text-gray-200 ">
+            Chat with Counselor
           </button>
-          {/* <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black hover:text-gray-200 ">Chat with Counselor</button>
-           <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black hover:text-gray-200 ">Chat with Counselor</button> */}
+          </a>
+          
           {/* <button className="bg-black text-white border border-white px-4 py-2 rounded hover:bg-gray-800">
             Chat with Counselor
           </button> */}
