@@ -84,30 +84,18 @@
 
 import React, { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import Button from "../common/Button";
-
-import heroVideo1 from "../../assests/heroVideo.mp4";
-import heroVideo2 from "../../assests/heroVideo1.mp4";
 import heroVideo3 from "../../assests/heroVideo2.mp4";
 
 const HeroSection = () => {
   // Array of videos and images
   const media = [
     {
-      video: heroVideo1,
-      image: "https://source.unsplash.com/random/1920x1080",
-    },
-    {
-      video: heroVideo2,
-      image: "https://source.unsplash.com/1920x1080/?nature,landscape",
-    },
-    {
       video: heroVideo3,
       image: "https://source.unsplash.com/1920x1080/?education,books",
     },
   ];
 
-  const [currentMedia, setCurrentMedia] = useState(2);
+  const [currentMedia, setCurrentMedia] = useState(0);
 
   // Cycle through videos and images every 10 seconds
   // useEffect(() => {
@@ -118,7 +106,7 @@ const HeroSection = () => {
   // }, [media.length]);
 
   return (
-    <section className="relative  overflow-hidden">
+    <section className="relative  overflow-hidden ">
       {/* Background Video */}
       <video
         key={currentMedia} // Forces re-render when media changes
@@ -134,11 +122,23 @@ const HeroSection = () => {
       {/* Overlay for contrast */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-full px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-white">
+      <div className="relative z-10 mt-20 flex flex-col items-center justify-center min-h-full px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-white">
         {/* Typing Animation */}
         <h1 className=" font-bold h-24 md:h-fit leading-none md:text-5xl text-4xl xl:max-w-7xl">
           <Typewriter
-            words={["Find Your Perfect College Path"]}
+            words={[
+              "Find Your Perfect College Path",
+              "Discover the Best College Fit for You",
+              "Explore Your Ideal Academic Journey",
+              "Uncover the Right Career Path Today",
+              "Choose Your Dream College Destination",
+              "Navigate Your Way to Academic Success",
+              "Select the Perfect School for Your Goals",
+              "Chart Your Personalized Education Path",
+              "Find the College That Matches You Best",
+              "Identify Your Ideal Higher Learning Path",
+              "Achieve Your Perfect College Match Now",
+            ]}
             loop={true}
             cursor
             cursorStyle="_"
@@ -162,14 +162,14 @@ const HeroSection = () => {
           />
           <button
             type="button"
-            className="px-6 py-3 text-white bg-blue-600 rounded-r-md hover:bg-blue-700"
+            className="px-6 py-3 text-white bg-gradient-to-br from-blue-700  via-blue-950 to-blue-700  rounded-r-md hover:bg-blue-700"
           >
             Search
           </button>
         </div>
 
         <div className="grid grid-cols-2 gap-2 md:gap-4 md:grid-cols-2 mt-8">
-          <button className="px-8 py-3 text-xs md:text-lg font-semibold rounded bg-gradient-to-br from-blue-700  via-blue-900 to-blue-700 text-gray-100">
+          <button className="px-8 py-3 text-xs md:text-lg font-semibold rounded bg-gradient-to-br from-blue-700  via-blue-950 to-blue-700 text-gray-100">
             Get Started
           </button>
           <button

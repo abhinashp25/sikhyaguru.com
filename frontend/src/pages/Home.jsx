@@ -15,6 +15,7 @@ import HowItWorks from '../components/home/HowItWorks'
 
 import TestimonalSection from '../components/home/TestimonalSection'
 import NewsTicker from '../components/home/NewsTicker'
+import Tabs from '../components/home/Tabs'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       {/* <CourseSection/> */}
      
       <HeroSection/>
+      <Tabs/>
       {/* <NewsTicker/> */}
       <AdmissionGuide/>
      
