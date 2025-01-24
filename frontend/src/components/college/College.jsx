@@ -225,38 +225,7 @@ function College() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="px-6 md:px-10">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-              <p>123 College Road</p>
-              <p>Silicon Valley, CA 94025</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: info@excellence.edu</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-blue-400">About Us</a></li>
-                <li><a href="#" className="hover:text-blue-400">Admissions</a></li>
-                <li><a href="#" className="hover:text-blue-400">Academics</a></li>
-                <li><a href="#" className="hover:text-blue-400">Campus Life</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <a href="#" className="hover:text-blue-400">Facebook</a>
-                <a href="#" className="hover:text-blue-400">Twitter</a>
-                <a href="#" className="hover:text-blue-400">Instagram</a>
-                <a href="#" className="hover:text-blue-400">LinkedIn</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }

@@ -110,17 +110,28 @@ import { motion, useAnimation } from "framer-motion";
 
 const NewsTicker = () => {
   const dummyData = [
-    { title: "1 UG Exam 2024", url: "https://www.ugexam.com" },
-    { title: "2 PG Admission 2024", url: "https://www.pgadmission.com" },
-    { title: "3 GATE 2024 Results", url: "https://www.gate2024.com" },
-    { title: "4 NEET UG 2024", url: "https://www.neetug.com" },
-    { title: "5 JEE Main 2024", url: "https://www.jeemain.com" },
-    { title: "6 Common Application Form", url: "https://www.commonform.com" },
-    { title: "7 Nation Exam", url: "https://www.7.com" },
-    { title: "8 Nation Exam", url: "https://www.7.com" },
-    { title: "9 Nation Exam", url: "https://www.7.com" },
-    { title: "10 Nation Exam", url: "https://www.7.com" },
+    { title: "JEE Main 2025", url: "https://jeemain.nta.nic.in/" },
+    { title: "OJEE 2025", url: "https://ojee.nic.in/" },
+    { title: "OUAT Entrance Exam 2025", url: "http://ouat.nic.in/" },
+    { title: "CUET UG 2025", url: "https://cuet.samarth.ac.in/" },
+    { title: "GATE 2025", url: "https://gate.iitb.ac.in/" },
+    { title: "NEET UG 2025", url: "https://neet.nta.nic.in/" },
+    { title: "WBJEE 2025", url: "https://wbjeeb.nic.in/" },
+    { title: "CUET PG 2025", url: "https://cuet.nta.nic.in/" },
+    { title: "KCET 2025", url: "https://cetonline.karnataka.gov.in/kea/" },
+    { title: "TS EAMCET 2025", url: "https://eamcet.tsche.ac.in/" },
+    { title: "AP EAPCET 2025", url: "https://sche.ap.gov.in/EAPCET/" },
+    { title: "COMEDK UGET 2025", url: "https://www.comedk.org/" },
+    { title: "KEAM 2025", url: "https://cee.kerala.gov.in/" },
+    { title: "MHT CET 2025", url: "https://mhtcet2025.mahacet.org/" },
+    { title: "UPSEE 2025", url: "https://upsee.nic.in/" },
+    { title: "PTU Entrance Exam 2025", url: "https://www.ptu.ac.in/" },
+    { title: "TNEA 2025", url: "https://www.tneaonline.org/" },
+    { title: "Assam CEE 2025", url: "https://astu.ac.in/" },
+    { title: "CG PET 2025", url: "https://vyapam.cgstate.gov.in/" },
+    { title: "JCECE 2025", url: "https://jceceb.jharkhand.gov.in/" }
   ];
+  
 
   const [hovering, setHovering] = useState(false);
 

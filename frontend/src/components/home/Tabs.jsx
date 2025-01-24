@@ -1,214 +1,3 @@
-// import React, { useState } from "react";
-// import { motion } from "framer-motion";
-// import {
-//   Book,
-//   GraduationCap,
-//   Stethoscope,
-//   Code,
-//   Briefcase,
-//   Atom,
-//   Globe,
-//   User,
-//   Calculator,
-// } from "lucide-react";
-// import { useNavigate } from "react-router-dom";
-
-// const Tabs = () => {
-//   const [activeTab, setActiveTab] = useState("courses");
-//   const navigate = useNavigate();
-
-//   const courses = [
-//     {
-//       icon: GraduationCap,
-//       title: "Engineering",
-//       description: "Explore the world of engineering.",
-//     },
-//     {
-//       icon: Stethoscope,
-//       title: "Medical",
-//       description: "Learn medical sciences and healthcare.",
-//     },
-//     {
-//       icon: Atom,
-//       title: "Science",
-//       description: "Dive into physics, chemistry, and biology.",
-//     },
-//     {
-//       icon: Calculator,
-//       title: "Commerce",
-//       description: "Master accounting, finance, and business.",
-//     },
-//     {
-//       icon: Code,
-//       title: "Computer Science",
-//       description: "Learn programming and algorithms.",
-//     },
-//     {
-//       icon: Briefcase,
-//       title: "Management",
-//       description: "Develop leadership and managerial skills.",
-//     },
-//     {
-//       icon: Globe,
-//       title: "Geography",
-//       description: "Understand the Earth's features and cultures.",
-//     },
-//     {
-//       icon: Book,
-//       title: "History",
-//       description: "Study past events and civilizations.",
-//     },
-//     {
-//       icon: User,
-//       title: "Psychology",
-//       description: "Learn human behavior and mental processes.",
-//     },
-
-//   ];
-
-//   const exams = [
-//     {
-//       icon: GraduationCap,
-//       title: "JEE Main",
-//       description: "Prepare for engineering entrance exams.",
-//     },
-//     {
-//       icon: Stethoscope,
-//       title: "NEET",
-//       description: "Medical entrance preparation.",
-//     },
-//     {
-//       icon: Calculator,
-//       title: "CPT",
-//       description: "Commerce professional training.",
-//     },
-//     {
-//       icon: Code,
-//       title: "Coding Competitions",
-//       description: "Test your programming skills.",
-//     },
-//     {
-//       icon: Atom,
-//       title: "Science Olympiad",
-//       description: "Participate in science challenges.",
-//     },
-//     {
-//       icon: Globe,
-//       title: "Geography Quiz",
-//       description: "Test your knowledge of world geography.",
-//     },
-//     {
-//       icon: Book,
-//       title: "History Exam",
-//       description: "Evaluate your understanding of history.",
-//     },
-//     {
-//       icon: User,
-//       title: "Psychology Test",
-//       description: "Test your knowledge of psychology.",
-//     },
-//     {
-//       icon: Briefcase,
-//       title: "MBA Entrance",
-//       description: "Management studies preparation.",
-//     },
-
-//   ];
-
-//   return (
-//     <div className="container mx-auto p-4">
-//       {/* Tab Buttons */}
-//       {/* <div className="flex justify-center space-x-4 mb-6">
-//         <button
-//           className={`py-2 px-6 rounded-lg text-white ${activeTab === "courses" ? "bg-blue-600" : "bg-gray-500"}`}
-//           onClick={() => setActiveTab("courses")}
-//         >
-//           Courses
-//         </button>
-//         <button
-//           className={`py-2 px-6 rounded-lg text-white ${activeTab === "exams" ? "bg-blue-600" : "bg-gray-500"}`}
-//           onClick={() => {
-//             setActiveTab("exams");
-//           //  navigate("/exams"); // Redirect to exams page
-//           }}
-//         >
-//           Exams
-//         </button>
-//       </div> */}
-
-//       <div className="flex justify-center space-x-6 mb-8 mt-10">
-//         <button
-//           className={`py-2 px-8 text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ${
-//             activeTab === "courses"
-//               ? "bg-blue-600 text-white scale-110 shadow-blue-300"
-//               : "bg-gray-300 text-gray-700 hover:bg-blue-100 hover:text-blue-600"
-//           }`}
-//           onClick={() => setActiveTab("courses")}
-//         >
-//           Courses
-//         </button>
-//         <button
-//           className={`py-2 px-8 text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ${
-//             activeTab === "exams"
-//               ? "bg-blue-600 text-white scale-110 shadow-blue-300"
-//               : "bg-gray-300 text-gray-700 hover:bg-blue-100 hover:text-blue-600"
-//           }`}
-//           onClick={() => {
-//             setActiveTab("exams");
-//             // navigate("/exams"); // Uncomment to enable navigation
-//           }}
-//         >
-//           Exams
-//         </button>
-//       </div>
-
-//       {/* Content */}
-//       <motion.div
-//         key={activeTab}
-//         initial={{ opacity: 0, y: 10 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.3 }}
-//       >
-//         {activeTab === "courses" ? (
-//           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-//             {courses.map((course, index) => (
-//               <motion.div
-//                 key={index}
-//                 className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4 transition-transform transform hover:scale-105"
-//                 whileHover={{ scale: 1.05 }}
-//               >
-//                 <course.icon className="text-blue-500 w-12 h-12" />
-//                 <div>
-//                   <h3 className="text-xl font-semibold">{course.title}</h3>
-//                   <p className="text-gray-600">{course.description}</p>
-//                 </div>
-//               </motion.div>
-//             ))}
-//           </div>
-//         ) : (
-//           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-//             {exams.map((exam, index) => (
-//               <motion.div
-//                 key={index}
-//                 className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4 transition-transform transform hover:scale-105"
-//                 whileHover={{ scale: 1.05 }}
-//               >
-//                 <exam.icon className="text-green-500 w-12 h-12" />
-//                 <div>
-//                   <h3 className="text-xl font-semibold">{exam.title}</h3>
-//                   <p className="text-gray-600">{exam.description}</p>
-//                 </div>
-//               </motion.div>
-//             ))}
-//           </div>
-//         )}
-//       </motion.div>
-//     </div>
-//   );
-// };
-
-// export default Tabs;
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -367,8 +156,8 @@ const Tabs = () => {
         <button
           className={`py-2 px-8 text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ${
             activeTab === "courses"
-              ? "bg-blue-600 text-white scale-110 shadow-blue-300"
-              : "bg-gray-300 text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+              ? "bg-gradient-to-br from-blue-700  via-blue-900 to-blue-700 text-white scale-110 shadow-blue-300"
+              : "bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-600"
           }`}
           onClick={() => setActiveTab("courses")}
         >
@@ -377,8 +166,8 @@ const Tabs = () => {
         <button
           className={`py-2 px-8 text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ${
             activeTab === "exams"
-              ? "bg-blue-600 text-white scale-110 shadow-blue-300"
-              : "bg-gray-300 text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+              ? "bg-gradient-to-br from-blue-700  via-blue-900 to-blue-700 text-white scale-110 shadow-blue-300"
+              : "bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-600"
           }`}
           onClick={() => setActiveTab("exams")}
         >
@@ -397,8 +186,9 @@ const Tabs = () => {
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {courses.map((course, index) => (
               <motion.div
+                onClick={() => navigate("/colleges")}
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4 transition-transform transform hover:scale-105"
+                className="bg-white p-6 rounded-lg cursor-pointer shadow-lg flex items-center space-x-4 transition-transform transform hover:scale-105"
                 whileHover={{ scale: 1.02 }}
               >
                 <course.icon className="text-blue-500 w-12 h-12" />

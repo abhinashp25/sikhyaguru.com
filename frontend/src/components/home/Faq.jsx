@@ -36,8 +36,10 @@ const FAQAccordion = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+
+  //bg-gradient-to-br  from-purple-200 via-blue-200 to-purple-200
   return (
-    <div className="px-6 md:px-10 py-10 bg-gradient-to-br  from-purple-200 via-blue-200 to-purple-200 ">
+    <div className="px-6 md:px-10 py-10  ">
       <div className=" lg:max-w-4xl mx-auto my-10 py-10 px-6 md:px-10  border border-gray-300    lg:shadow-lg rounded-xl">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6 py-5">
           Frequently Asked Questions
@@ -79,9 +81,9 @@ const FAQAccordion = () => {
 
       <div
         data-aos="fade-up"
-        className="mt-12 text-center bg-gradient-to-br  from-purple-300 via-blue-200 to-purple-300 text-black  py-6 px-4 rounded-lg"
+        className="mt-12 text-center bg-gradient-to-br  from-blue-700 via-blue-950 to-blue-700 text-black  py-6 px-4 rounded-lg"
       >
-        <p className="text-lg font-semibold text-gray-800 mb-4">
+        <p className="text-lg font-semibold text-gray-200 mb-4">
           Need Assistance? Our admission counselors are here to guide you
           through every step.
         </p>
@@ -116,7 +118,7 @@ const FAQAccordion = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black hover:text-gray-200 ">
+            <button className="px-8 py-3 m-2 text-lg font-semibold rounded border border-gray-500  hover:bg-black text-white hover:text-gray-200 ">
             Chat with Counselor
           </button>
           </a>

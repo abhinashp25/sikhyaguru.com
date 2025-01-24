@@ -12,20 +12,20 @@ const Header = ({ setIsSidebarOpen }) => {
 
 
   return (
-    <div className={` ${pathname == "/" && "absolute z-20"} flex w-full items-center  justify-between  px-6 md:px-10 py-3  lg:h-20`}>
+    <div className={` ${pathname == "/" ? "absolute z-20" : "border-b border-gray-400"} flex w-full  items-center  justify-between  px-6 md:px-10 py-3  lg:h-20`}>
       {/* Hamburger icon for mobile */}
 
       <h2 className="  text-3xl font-extrabold text-gray-800 text-center ">
-          <span className="text-blue-300 ">Sikshya<span className="text-gray-100">Guru</span></span>
+          <span className="text-blue-500 ">Sikshya<span className={` ${pathname == "/" ? "text-gray-200" : "text-gray-800"} `}>Guru</span></span>
       </h2>
       <button
-        className="md:hidden  "
+        className="lg:hidden  "
         onClick={() => setIsSidebarOpen((prev) => !prev)}
       >
         <CiMenuFries size={25} className={`${pathname ==="/" && "text-white"} font-bold `} />
       </button>
 
-      <button className="hidden md:block bg-gradient-to-br from-blue-800 rounded-md via-blue-950 to-blue-700 py-2 px-6  hover:text-purple-200 text-white">
+      <button className="hidden lg:block bg-gradient-to-br from-blue-800 rounded-md via-blue-950 to-blue-700 py-2 px-6  hover:text-purple-200 text-white">
         Login
       </button>
     </div>

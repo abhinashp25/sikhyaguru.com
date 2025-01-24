@@ -16,20 +16,23 @@ import HowItWorks from '../components/home/HowItWorks'
 import TestimonalSection from '../components/home/TestimonalSection'
 import NewsTicker from '../components/home/NewsTicker'
 import Tabs from '../components/home/Tabs'
+import TestimonialSlider from '../components/home/TestimonalSlider'
 
 const Home = () => {
   return (
-    <div className='bg-gradient-to-br  from-blue-100 via-purple-200 to-purple-200 text-gray-900'> 
+    <div className='bg-slate-100'> 
       {/* <CourseSection/> */}
      
       <HeroSection/>
+       <NewsTicker/>
       <Tabs/>
-      {/* <NewsTicker/> */}
+     
       <AdmissionGuide/>
      
       <CompareColleges/>
       <AboutSection/>
       <HowItWorks/>
+      {/* <TestimonialSlider/> */}
      
       <TestimonalSection/>
     

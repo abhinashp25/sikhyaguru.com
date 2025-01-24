@@ -8,8 +8,10 @@ import Home from './pages/Home';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import CollegeList from './components/college/CollegeList';
+import CollegeList from './components/college/CollegeLis';
 import College from './components/college/College';
+import NotFound from './components/common/PageNotFound';
+import ScrollToTop from './components/common/ScrollToTop';
 
 
 
@@ -29,12 +31,14 @@ function App() {
   return (
     <>
     <Routes>
+     
       <Route path="/" element={<Layout />} >
         <Route path="" element={<Home/>} />
         <Route path="colleges" element={<CollegeList/>} />
         <Route path="college" element={<College/>} />
-       
         <Route path="about" element={<About/>} />
+        <Route path="*" element={<NotFound/>} />
+       
       </Route>
     </Routes>
     </>

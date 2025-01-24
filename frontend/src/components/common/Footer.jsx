@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white p-[24px] lg:p-[40px_50px_15px_50px]">
+    <footer className="bg-black  text-white p-[24px] lg:p-[40px_50px_15px_50px]">
       {/* Footer Container */}
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5  gap-12 md:gap-[30px]">
         {/* Logo & Description */}
@@ -30,7 +30,7 @@ const Footer = () => {
           /> */}
 
           <h2 className=" text-3xl font-extrabold text-gray-800  ">
-            <span className="text-purple-600">
+            <span className="text-blue-500">
               Sikshya<span className="text-gray-100">Guru</span>
             </span>
           </h2>
@@ -199,7 +199,7 @@ const Footer = () => {
         <p className="text-end">
           Design and Developed by{" "}
           <a
-            className="hover:text-white text-[#E2611F]  underline"
+            className="hover:text-white text-blue-500  underline"
             href=""
             target="_blank"
           >

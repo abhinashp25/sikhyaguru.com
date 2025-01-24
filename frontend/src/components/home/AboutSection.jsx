@@ -12,12 +12,14 @@ const AboutSection = () => {
     threshold: 0.2, // Percentage of the element visible to trigger
   });
 
+
+  //bg-gradient-to-br from-blue-200 via-purple-100 to-blue-200
   return (
     <section
       ref={ref}
-      className="py-24 relative bg-gradient-to-br from-blue-200 via-purple-100 to-blue-200"
+      className="py-24 relative "
     >
-      <div className="w-full max-w-7xl px-6 md:px-10">
+      <div className="w-full  px-6 md:px-10">
         <div className="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1">
           <div className="w-full justify-center items-start gap-6 grid sm:grid-cols-2 grid-cols-1 lg:order-first order-last">
             <div className="pt-24 lg:justify-center sm:justify-end justify-start items-start gap-2.5 flex">
