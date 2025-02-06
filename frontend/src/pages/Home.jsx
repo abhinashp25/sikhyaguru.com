@@ -26,9 +26,7 @@ const Home = () => {
       <HeroSection/>
        <NewsTicker/>
       <Tabs/>
-     
       <AdmissionGuide/>
-     
       <CompareColleges/>
       <AboutSection/>
       <HowItWorks/>

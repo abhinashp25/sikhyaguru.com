@@ -73,7 +73,7 @@ function College() {
   return (
     <div className=" ">
       {/* Hero Section */}
-      <div className="relative h-[600px]">
+      <div className="relative h-[600px] bg-gray-50">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3"
@@ -119,7 +119,7 @@ function College() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+              className={`px-6 py-2 rounded-md font-medium transition-colors ${
                 activeTab === tab
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -154,76 +154,14 @@ function College() {
 
           {activeTab === 'facilities' && <CampusFacilities/>}
           
-          {/* {activeTab === 'facilities' && (
-            <div className="grid md:grid-cols-2 gap-6">
-              {tabs.facilities.content.map((facility, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <Coffee className="w-5 h-5 text-blue-600" />
-                  <span>{facility}</span>
-                </div>
-              ))}
-            </div>
-          )} */}
 
           {activeTab === 'placements' && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <h4 className="text-2xl font-bold text-blue-600">{tabs.placements.content.averagePackage}</h4>
-                <p className="text-gray-600">Average Package</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-2xl font-bold text-blue-600">{tabs.placements.content.highestPackage}</h4>
-                <p className="text-gray-600">Highest Package</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-2xl font-bold text-blue-600">{tabs.placements.content.placementRate}</h4>
-                <p className="text-gray-600">Placement Rate</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-2xl font-bold text-blue-600">{tabs.placements.content.companies}</h4>
-                <p className="text-gray-600">Recruiting Companies</p>
-              </div>
-            </div>
+           <PlacementHighlights></PlacementHighlights>
           )}
         </div>
       </div>
 
-      {/* Hostel Section */}
-      <div className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Campus Life & Accommodation</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3"
-                alt="Campus Hostel"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl font-semibold mb-4">Modern Hostel Facilities</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <Home className="w-5 h-5 text-blue-600" />
-                  <span>Separate hostels for boys and girls</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Coffee className="w-5 h-5 text-blue-600" />
-                  <span>24/7 cafeteria service</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <BookOpen className="w-5 h-5 text-blue-600" />
-                  <span>Study rooms on each floor</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <DollarSign className="w-5 h-5 text-blue-600" />
-                  <span>Affordable accommodation fees</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       
     </div>

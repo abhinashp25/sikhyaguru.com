@@ -128,16 +128,12 @@ const HeroSection = () => {
           <Typewriter
             words={[
               "Find Your Perfect College Path",
-              "Discover the Best College Fit for You",
+             
               "Explore Your Ideal Academic Journey",
               "Uncover the Right Career Path Today",
-              "Choose Your Dream College Destination",
-              "Navigate Your Way to Academic Success",
-              "Select the Perfect School for Your Goals",
-              "Chart Your Personalized Education Path",
-              "Find the College That Matches You Best",
-              "Identify Your Ideal Higher Learning Path",
-              "Achieve Your Perfect College Match Now",
+              "Choose Your Dream College ",
+             
+              
             ]}
             loop={true}
             cursor

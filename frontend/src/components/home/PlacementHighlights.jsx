@@ -1,9 +1,10 @@
+import { BarChart, Briefcase, CheckCircle } from "lucide-react";
 import React from "react";
 
 const PlacementHighlights = () => {
   return (
     <section className="py-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <div className=" px-6 md:px-10">
         {/* Section Header */}
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900">Placement Highlights</h2>
@@ -13,17 +14,18 @@ const PlacementHighlights = () => {
         </div>
 
         {/* Stats Section */}
+        {/* Stats Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
           {[
-            { label: "Highest Package Offered", value: "₹42 LPA", icon: "💰" },
-            { label: "Average Package", value: "₹12.5 LPA", icon: "📈" },
-            { label: "Placement Rate", value: "95%", icon: "✅" },
+            { label: "Highest Package Offered", value: "₹42 LPA", icon: <Briefcase size={40} className="text-purple-600" /> },
+            { label: "Average Package", value: "₹12.5 LPA", icon: <BarChart size={40} className="text-blue-600" /> },
+            { label: "Placement Rate", value: "95%", icon: <CheckCircle size={40} className="text-green-600" /> },
           ].map((stat, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md text-center"
+              className="bg-white p-6 rounded-lg shadow-md text-center flex flex-col items-center"
             >
-              <div className="text-5xl">{stat.icon}</div>
+              {stat.icon}
               <p className="text-2xl font-bold mt-4">{stat.value}</p>
               <p className="text-gray-600 mt-2">{stat.label}</p>
             </div>

@@ -12,6 +12,8 @@ import CollegeList from './components/college/CollegeLis';
 import College from './components/college/College';
 import NotFound from './components/common/PageNotFound';
 import ScrollToTop from './components/common/ScrollToTop';
+import CollegeMain from './components/college/CollegeMain';
+
 
 
 
@@ -35,7 +37,9 @@ function App() {
       <Route path="/" element={<Layout />} >
         <Route path="" element={<Home/>} />
         <Route path="colleges" element={<CollegeList/>} />
-        <Route path="college" element={<College/>} />
+        <Route path="college1" element={<College/>} />
+        <Route path="college" element={<CollegeMain/>} />
+        
         <Route path="about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
        
