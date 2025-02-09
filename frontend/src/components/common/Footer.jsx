@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <footer className="bg-black  text-white p-[24px] lg:p-[40px_50px_15px_50px]">
       {/* Footer Container */}
-      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5  gap-12 md:gap-[30px]">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4   gap-12 md:gap-[30px]">
         {/* Logo & Description */}
         <div className="">
           {/* <img
@@ -164,7 +164,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <h3 className="font-semibold text-lg mb-4">
             Subscribe our newsletter
           </h3>
@@ -189,7 +189,7 @@ const Footer = () => {
               <IoMailOutline className="text-gray-400 text-lg" />
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-8 text-[#858293]  font-semibold text-[8px] lg:text-[14px] flex justify-between gap-6 border-t border-gray-700 pt-4">
@@ -197,7 +197,7 @@ const Footer = () => {
           © {currentYear} SikshyaGuru All Rights Reserved
         </p>
         <p className="text-end">
-          Design and Developed by{" "}
+        Developed by{" "}
           <a
             className="hover:text-white text-blue-500  underline"
             href=""

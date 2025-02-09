@@ -21,7 +21,7 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
       {/* Sidebar */}
       <div
-        className={`fixed thin-scrollbar z-40 inset-y-0 overflow-y-auto h-[300vh] left-0 bg-gray-800 text-white w-64 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed thin-scrollbar z-40 inset-y-0 overflow-y-auto h-[300vh] left-0 bg-gray-100 text-black w-64 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } lg:translate-x-0 lg:static lg:w-0`}
       >
         <div>
@@ -33,7 +33,7 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
           </button>
         </div>
         <h2 className="text-3xl font-extrabold text-gray-800 mt-3 text-left px-4 mb-5">
-          <span className="text-blue-400">Sikshya<span className="text-gray-100">Guru</span></span>
+          <span className="text-blue-400">Sikshya<span className="text-gray-950">Guru</span></span>
         </h2>
         
         <ul className="space-y-4 p-4">
@@ -45,7 +45,7 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 to={route.path}
                 
                 className={({ isActive }) =>
-                  `p-2 rounded block ${isActive ? "bg-blue-500 text-white" : "hover:bg-gray-700"
+                  `p-2 rounded block ${isActive ? " text-black" : "hover:bg-gray-700"
                   }`
                 }
               >

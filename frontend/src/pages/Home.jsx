@@ -17,18 +17,26 @@ import TestimonalSection from '../components/home/TestimonalSection'
 import NewsTicker from '../components/home/NewsTicker'
 import Tabs from '../components/home/Tabs'
 import TestimonialSlider from '../components/home/TestimonalSlider'
+import Ab from '../components/home/Ab'
+import CollegeFinder from '../components/home/CollegeFinder'
 
 const Home = () => {
   return (
     <div className='bg-slate-100'> 
       {/* <CourseSection/> */}
      
+
       <HeroSection/>
-       <NewsTicker/>
-      <Tabs/>
-      <AdmissionGuide/>
-      <CompareColleges/>
+      <NewsTicker/>
+      <CollegeFinder/>
+       
+        
+      {/* <AdmissionGuide/> */}
+      {/* <Tabs/> */}
+      <Ab/>
+      {/* <AdmissionGuide/> */}
       <AboutSection/>
+      <CompareColleges/>
       <HowItWorks/>
       {/* <TestimonialSlider/> */}
      
