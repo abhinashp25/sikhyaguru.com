@@ -104,6 +104,7 @@ const FAQAccordion = () => {
           
 
           <a
+           
             href="https://wa.me/+917735381142?text=Hii"
             target="_blank"
             rel="noopener noreferrer"
@@ -114,6 +115,7 @@ const FAQAccordion = () => {
           
 
           <a
+           className="hidden md:block"
             href="https://wa.me/+917735381142?text=Hii I am Intersted to join College"
             target="_blank"
             rel="noopener noreferrer"

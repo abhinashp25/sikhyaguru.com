@@ -20,11 +20,69 @@ import TestimonialSlider from '../components/home/TestimonalSlider'
 import Ab from '../components/home/Ab'
 import CollegeFinder from '../components/home/CollegeFinder'
 
+
+
+// const WhatsAppButton = () => {
+//   return (
+//     <a
+//       href="https://wa.me/yourphonenumber"
+//       target="_blank"
+//       rel="noopener noreferrer"
+//       className="fixed top-[50%] z-50 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300"
+//     >
+//       <MessageCircle size={30} />
+//     </a>
+//   );
+// };
+
+import { MessageCircle, Instagram, Mail } from "lucide-react";
+import TestimonalFinal from '../components/home/Testimonal1'
+
+const FloatingSocials = () => {
+  return (
+    <div className="hidden  fixed z-50 top-[45%] right-4 md:flex flex-col gap-3">
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/yourphonenumber"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300"
+      >
+        <MessageCircle size={30} />
+      </a>
+
+      {/* Instagram */}
+      {/* <a
+        href="https://instagram.com/yourusername"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-pink-500 text-white p-3 rounded-full shadow-lg hover:bg-pink-600 transition-all duration-300"
+      >
+        <Instagram size={30} />
+      </a> */}
+
+      {/* Mail */}
+      <a
+        href="mailto:your@email.com"
+        className="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300"
+      >
+        <Mail size={30} />
+      </a>
+    </div>
+  );
+};
+
+
+
+
+
+
 const Home = () => {
   return (
     <div className='bg-slate-100'> 
       {/* <CourseSection/> */}
      
+     <FloatingSocials/>
 
       <HeroSection/>
       <NewsTicker/>
@@ -40,7 +98,9 @@ const Home = () => {
       <HowItWorks/>
       {/* <TestimonialSlider/> */}
      
-      <TestimonalSection/>
+      {/* <TestimonalSection/> */}
+      <TestimonalFinal/>
+
     
       {/* <ContactSection/> */}
       {/* <NewsSection/> */}
