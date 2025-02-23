@@ -22,3 +22,15 @@ code {
   font-family: "Poppins", serif;
   font-style: normal;
 }
+
+
+
+.hideScrollbar {
+  overflow: auto; /* or scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}

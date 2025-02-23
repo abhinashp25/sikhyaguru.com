@@ -12,7 +12,7 @@ import HorizontalLogoSlider from "./HorizontanlPlacement";
 
 const Placements = () => {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="space-y-8">
       <div className="">
         {/* Section Header */}
 

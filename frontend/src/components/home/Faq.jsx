@@ -39,7 +39,7 @@ const FAQAccordion = () => {
 
   //bg-gradient-to-br  from-purple-200 via-blue-200 to-purple-200
   return (
-    <div className="px-6 md:px-10 py-10  ">
+    <div className="px-6 md:px-10 py-10  bg-white ">
       <div className=" lg:max-w-4xl mx-auto my-10 py-10 px-6 md:px-10  border border-gray-300    lg:shadow-lg rounded-xl">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6 py-5">
           Frequently Asked Questions

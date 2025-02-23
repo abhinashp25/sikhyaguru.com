@@ -1,6 +1,6 @@
-
 import { motion } from "framer-motion"
 import { MessageSquare, Phone } from "lucide-react"
+import AdmissionGuideBgImg from "../../assests/AdmissionGuideBgImg.webp";
 
 export default function AdmissionGuide() {
   const steps = [
@@ -54,7 +54,9 @@ export default function AdmissionGuide() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 md:p-12">
+    <div  
+    style={{ backgroundImage: `url(${AdmissionGuideBgImg}) ` }}
+    className="min-h-screen  bg-black text-white p-6 md:p-12">
       <motion.div initial="hidden" animate="visible" variants={containerVariants} className="max-w-4xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Admission Guide</h1>
@@ -68,6 +70,7 @@ export default function AdmissionGuide() {
           {/* Steps */}
           {steps.map((step, index) => (
             <motion.div
+             data-aos="fade-down"
               key={step.number}
               variants={itemVariants}
               className={`relative mb-12 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 ${
