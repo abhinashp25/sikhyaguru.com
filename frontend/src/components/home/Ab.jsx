@@ -69,8 +69,9 @@ export default function AdmissionGuide() {
 
           {/* Steps */}
           {steps.map((step, index) => (
+            <div data-aos="fade-up">
             <motion.div
-             data-aos="fade-down"
+             
               key={step.number}
               variants={itemVariants}
               className={`relative mb-12 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 ${
@@ -101,6 +102,7 @@ export default function AdmissionGuide() {
                 </button>
               </motion.div>
             </motion.div>
+            </div>
           ))}
         </div>
 

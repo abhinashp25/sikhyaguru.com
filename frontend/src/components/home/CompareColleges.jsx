@@ -55,7 +55,8 @@ const CompareColleges = () => {
         </div>
 
         {/* Comparison Table */}
-        <div className="mt-8 bg-slate-900 p-6 rounded-lg overflow-x-auto">
+        <div  data-aos="fade-up"
+         className="mt-8 bg-slate-900 p-6 rounded-lg overflow-x-auto">
           <table className="w-full text-left">
             <thead>
               <tr className="text-blue-500 border-b border-gray-600">

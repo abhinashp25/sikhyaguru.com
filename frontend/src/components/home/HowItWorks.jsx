@@ -55,7 +55,7 @@ const HowItWorks = () => {
           ))}
         </div>
 
-        <div className=" w-full h-full">
+        <div data-aos="fade-up" className=" w-full h-full">
           {" "}
           <img
             src={workItWorksImg}
