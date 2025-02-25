@@ -336,7 +336,7 @@ const LoginPopup = () => {
     if (!isAuth) {
       const interval = setInterval(() => {
         setIsOpen(true);
-      }, 3000);
+      }, 5000);
       return () => clearInterval(interval);
     }
   }, [isAuth]);
@@ -361,8 +361,9 @@ const LoginPopup = () => {
       {!isAuth && isOpen && (
         <div className="fixed inset-0   flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
           <div
-          //  style={{ backgroundImage: `url(${EntrollForm}) ` }}
-           className="relative   bg-gray-50  h-fit m-1 md:m-0 overflow-y-auto  md:h-fit p-2 md:p-2 rounded-lg shadow-lg w-full max-w-4xl flex flex-col md:flex-row">
+            //  style={{ backgroundImage: `url(${EntrollForm}) ` }}
+            className="relative   bg-gray-50  h-fit m-1 md:m-0 overflow-y-auto  md:h-fit p-2 md:p-2 rounded-lg shadow-lg w-full max-w-4xl flex flex-col md:flex-row"
+          >
             {/* Left Section: Image and Info */}
             <div
               style={{ backgroundImage: `url(${EntrollForm}) ` }}
@@ -381,9 +382,12 @@ const LoginPopup = () => {
               /> */}
             </div>
             {/* Right Section: Form */}
+          
             <div className="w-full md:w-1/2 p-6">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl text-center font-semibold">Enrollment Form</h2>
+                <h2 className="text-xl text-center font-semibold">
+                  Enrollment Form
+                </h2>
                 <X
                   onClick={onClose}
                   className="cursor-pointer text-gray-500 hover:text-red-500"
@@ -391,49 +395,96 @@ const LoginPopup = () => {
                 />
               </div>
               <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
+                {/* Full Name */}
+                <div>
                 <input
                   type="text"
                   placeholder="Full Name"
                   {...register("name", { required: "Name is required" })}
-                  className="border rounded-md p-3 w-full"
+                  className={`border rounded-md p-3 w-full ${
+                    errors.name ? "border-red-500" : ""
+                  }`}
                 />
                 {errors.name && (
-                  <span className="text-red-500 text-sm">
+                  <span className="text-red-500 text-xs">
                     {errors.name.message}
                   </span>
                 )}
+                </div>
 
+                {/* Email */}
+                <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value:
+                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                      message: "Invalid email address",
+                    },
+                  })}
+                  className={`border rounded-md p-3 w-full ${
+                    errors.email ? "border-red-500" : ""
+                  }`}
+                />
+                {errors.email && (
+                  <span className="text-red-500 text-xs">
+                    {errors.email.message}
+                  </span>
+                )}
+                </div>
+
+                {/* Phone Number */}
+                <div>
                 <input
                   type="tel"
                   placeholder="Phone Number"
                   {...register("phone", {
                     required: "Phone number is required",
+                    pattern: {
+                      value: /^[6-9]\d{9}$/,
+                      message: "Enter a valid 10-digit Indian number",
+                    },
                   })}
-                  className="border rounded-md p-3 w-full"
+                  className={`border rounded-md p-3 w-full ${
+                    errors.phone ? "border-red-500" : ""
+                  }`}
                 />
                 {errors.phone && (
-                  <span className="text-red-500 text-sm">
+                  <span className="text-red-500 text-xs">
                     {errors.phone.message}
                   </span>
                 )}
+                </div>
 
+                {/* City */}
+                <div>
                 <input
                   type="text"
                   placeholder="City"
                   {...register("city", { required: "City is required" })}
-                  className="border rounded-md p-3 w-full"
+                  className={`border rounded-md p-3 w-full ${
+                    errors.city ? "border-red-500" : ""
+                  }`}
                 />
                 {errors.city && (
-                  <span className="text-red-500 text-sm">
+                  <span className="text-red-500 text-xs">
                     {errors.city.message}
                   </span>
                 )}
+                </div>
 
+                {/* Course Selection */}
+                <div>
                 <select
                   {...register("course", {
                     required: "Course selection is required",
                   })}
-                  className="border rounded-md p-3 w-full"
+                  className={`border rounded-md p-3 w-full ${
+                    errors.course ? "border-red-500" : ""
+                  }`}
                 >
                   <option value="">Select Course</option>
                   <option value="BTech">BTech</option>
@@ -442,11 +493,13 @@ const LoginPopup = () => {
                   <option value="BCA">BCA</option>
                 </select>
                 {errors.course && (
-                  <span className="text-red-500 text-sm">
+                  <span className="text-red-500 text-xs">
                     {errors.course.message}
                   </span>
                 )}
+                </div>
 
+                {/* Submit Button */}
                 <button
                   type="submit"
                   className="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
