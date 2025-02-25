@@ -9,6 +9,8 @@ import Ab from "../components/home/Ab";
 import CollegeFinder from "../components/home/CollegeFinder";
 import { MessageCircle, Instagram, Mail } from "lucide-react";
 import TestimonalFinal from "../components/home/Testimonal1";
+import LoginPopup from "../components/common/LoginPopup";
+import EnrollFormModal from "../components/common/EnrollFormModal";
 
 
 
@@ -25,6 +27,8 @@ const Home = () => {
       <HowItWorks />
       <TestimonalFinal />
       <FAQAccordion />
+      {/* <EnrollFormModal/> */}
+      <LoginPopup/> 
     </div>
   );
 };

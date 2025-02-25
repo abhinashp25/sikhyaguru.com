@@ -56,7 +56,7 @@ export default function AdmissionGuide() {
   return (
     <div  
     style={{ backgroundImage: `url(${AdmissionGuideBgImg}) ` }}
-    className="min-h-screen  bg-black text-white p-6 md:p-12">
+    className="min-h-screen bg-no-repeat bg-cover bg-black text-white p-6 md:p-12">
       <motion.div initial="hidden" animate="visible" variants={containerVariants} className="max-w-4xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Admission Guide</h1>
@@ -81,7 +81,7 @@ export default function AdmissionGuide() {
               {/* Timeline number */}
               <motion.div
                 whileHover={{ scale: 1.1 }}
-                className="absolute left-4 md:left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center z-10"
+                className="absolute left-4 md:left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-8 h-8 bg-gradient-to-br from-blue-700  via-blue-950 to-blue-700  rounded-full flex items-center justify-center z-10"
               >
                 <span className="font-bold">{step.number}</span>
               </motion.div>

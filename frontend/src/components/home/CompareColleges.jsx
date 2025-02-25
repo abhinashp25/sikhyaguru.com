@@ -1,10 +1,13 @@
 import React from "react";
+import AdmissionGuideBgImg from "../../assests/AdmissionGuideBgImg.webp";
 
 
 //bg-gradient-to-br  from-blue-100 via-purple-200 to-blue-100
 const CompareColleges = () => {
   return (
-    <section className="bg-black  text-gray-200  py-10 overflow-hidden">
+    <section 
+     style={{ backgroundImage: `url(${AdmissionGuideBgImg}) ` }}
+    className=" bg-no-repeat bg-cover text-gray-200  py-10 overflow-hidden">
       <div className="px-6 md:px-10">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">

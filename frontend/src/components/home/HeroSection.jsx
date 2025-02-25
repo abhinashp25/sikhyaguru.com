@@ -128,7 +128,6 @@ const HeroSection = () => {
           <Typewriter
             words={[
               "Find Your Perfect College Path",
-             
               "Explore Your Ideal Academic Journey",
               "Uncover the Right Career Path Today",
               "Choose Your Dream College ",
