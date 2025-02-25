@@ -359,9 +359,7 @@ const LoginPopup = () => {
   return (
     <>
       {!isAuth && isOpen && (
-        <div 
-       
-        className="fixed inset-0   flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+        <div className="fixed inset-0   flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
           <div
           //  style={{ backgroundImage: `url(${EntrollForm}) ` }}
            className="relative   bg-gray-50  h-[90vh] m-1 md:m-0 overflow-y-auto  md:h-fit p-2 md:p-2 rounded-lg shadow-lg w-full max-w-4xl flex flex-col md:flex-row">
