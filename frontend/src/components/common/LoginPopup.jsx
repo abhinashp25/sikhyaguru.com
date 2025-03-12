@@ -336,7 +336,7 @@ const LoginPopup = () => {
     if (!isAuth) {
       const interval = setInterval(() => {
         setIsOpen(true);
-      }, 15000);
+      }, 60000*3);
       return () => clearInterval(interval);
     }
   }, [isAuth]);
