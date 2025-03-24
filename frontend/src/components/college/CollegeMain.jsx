@@ -31,6 +31,7 @@ import Placements from "./college-page/Placements";
 import Facilities from "./college-page/Facilities";
 import Hostels from "./college-page/Hostels";
 import Reviews from "./college-page/Reviews";
+import Gallery from "./college-page/Gallery";
 
 function StatCard({ icon: Icon, title, value }) {
   return (
@@ -52,6 +53,7 @@ function CollegeMain() {
     { id: "placements", label: "Placements" },
     { id: "facilities", label: "Facilities" },
     { id: "hostels", label: "Hostels" },
+    { id: "gallery", label: "Gallery" },
     { id: "reviews", label: "Reviews" },
   ];
 
@@ -173,19 +175,14 @@ function CollegeMain() {
         {/* Tab Content */}
         <div className="bg-white rounded-xl p-2 mb-8">
           {/* Overview Tab */}
-          {activeTab === "overview" && (
-            <Overview/>
-           
-          )}
+          {activeTab === "overview" && <Overview />}
 
           {/* Fees & Courses Tab */}
-          {activeTab === "fees" && (
-           <FeesAndCourses/>
-          )}
+          {activeTab === "fees" && <FeesAndCourses />}
 
           {/* Placements Tab */}
           {activeTab === "placements" && (
-            <Placements/>
+            <Placements />
             // <div className="space-y-8">
             //   <div>
             //     <h2 className="text-2xl font-bold mb-6">
@@ -335,19 +332,15 @@ function CollegeMain() {
           )}
 
           {/* Facilities Tab */}
-          {activeTab === "facilities" && (
-            <Facilities/>
-          )}
+          {activeTab === "facilities" && <Facilities />}
 
           {/* Hostels Tab */}
-          {activeTab === "hostels" && (
-            <Hostels/>
-          )}
+          {activeTab === "hostels" && <Hostels />}
+
+          {activeTab === "gallery" && <Gallery />}
 
           {/* Reviews Tab */}
-          {activeTab === "reviews" && (
-           <Reviews/>
-          )}
+          {activeTab === "reviews" && <Reviews />}
         </div>
       </div>
     </div>

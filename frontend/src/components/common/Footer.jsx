@@ -36,8 +36,7 @@ const Footer = () => {
           </h2>
 
           <p className="mt-4 text-xs text-gray-500">
-            Master the art of digital marketing and stock trading with our
-            comprehensive courses.
+          Find Your Perfect College – Explore, Compare, and Apply with Ease!
           </p>
 
           <div className="flex space-x-4 mt-4">
