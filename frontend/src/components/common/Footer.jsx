@@ -62,7 +62,7 @@ const Footer = () => {
           <ul className="space-y-2 text-[13px] text-gray-400  ">
             <li
               onClick={() => {
-                navigate("/");
+                navigate("/about");
                 scrollToSection("about");
               }}
               className=" cursor-pointer hover:text-white"
@@ -77,11 +77,11 @@ const Footer = () => {
               }}
               className=" cursor-pointer hover:text-white"
             >
-              Courses
+              Colleges
             </li>
             <li
               onClick={() => {
-                navigate("/");
+                navigate("/features");
                 scrollToSection("features");
               }}
               className=" cursor-pointer hover:text-white"
@@ -198,11 +198,12 @@ const Footer = () => {
         <p className="text-end">
         Developed by{" "}
           <a
-            className="hover:text-white text-blue-500  underline"
+            className="hover:text-white text-blue-500"
             href=""
             target="_blank"
+            rel="noopener noreferrer"
           >
-            TheLast
+            Surya and Lalit
           </a>{" "}
         </p>
       </div>
