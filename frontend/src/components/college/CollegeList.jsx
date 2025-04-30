@@ -70,7 +70,7 @@ function CollegeList() {
     const fetchAllColleges = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`${import.meta.env.REACT_APP_BACKEND_URI}/api/v0/colleges`);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v0/colleges`);
         const data = await response.json();
 
         if (data.success) {

@@ -40,7 +40,7 @@ export default function CollegeFinder() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.REACT_APP_BACKEND_URI}/api/v0/colleges`)
+      .get(`${process.env.REACT_APP_BACKEND_URI}/api/v0/colleges`)
       .then((res) => {
         setCollegeData(res.data.data);
         setLoading(false);

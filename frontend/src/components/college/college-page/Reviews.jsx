@@ -14,7 +14,7 @@ const Reviews = ({collegeData}) => {
       try {
         const id = collegeData._id || "680a6b86a1460abdd5738b43";
         const response = await axios.get(
-          `${import.meta.env.REACT_APP_BACKEND_URI}/api/v0/colleges/${id}`,
+          `${process.env.REACT_APP_BACKEND_URI}/api/v0/colleges/${id}`,
           { cancelToken: cancelTokenSource.token }
         );
 
