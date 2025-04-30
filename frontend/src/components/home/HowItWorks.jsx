@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import workItWorksImg from "../../assests/HowItWorkS.jpg";
+import { Modal } from "antd";
 
 const HowItWorks = () => {
   const { ref: stepsRef, inView: stepsInView } = useInView({
-    triggerOnce: false, // Allow animations to trigger every time the component is in view
-    threshold: 0.3, // Trigger when 10% of the component is in view
+    triggerOnce: false,
+    threshold: 0.3,
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const steps = [
     "Tell us about your College / Course & Location preferences.",
@@ -19,7 +30,6 @@ const HowItWorks = () => {
     "Yippie! your dream college is right there waiting for you to join!",
   ];
 
-  // bg-gradient-to-br  from-blue-100 via-purple-200 to-purple-200
   return (
     <div className="py-16 px-6 sm:px-12 bg-white">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
@@ -28,7 +38,6 @@ const HowItWorks = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div ref={stepsRef} className="relative space-y-12">
-          {/* Timeline line */}
           <div className="absolute left-4 top-12 bottom-0 w-1 bg-gray-300"></div>
 
           {steps.map((step, index) => (
@@ -39,24 +48,15 @@ const HowItWorks = () => {
               transition={{ duration: 1, delay: index * 0.3 }}
               className="flex items-start gap-4 relative"
             >
-              {/* Step Number */}
               <div className="flex-none w-8 h-8 bg-teal-500 rounded-full flex justify-center items-center z-10">
                 <span className="text-white font-bold">{index + 1}</span>
               </div>
-
-              {/* Connecting line to the next step */}
-              {/* {index < steps.length - 1 && (
-              <div className="absolute left-8 top-full h-12 w-1 bg-gray-300"></div>
-            )} */}
-
-              {/* Step Description */}
               <p className="text-lg text-gray-700">{step}</p>
             </motion.div>
           ))}
         </div>
 
         <div data-aos="fade-up" className=" w-full hidden md:block h-full">
-          {" "}
           <img
             src={workItWorksImg}
             alt="How It Works"
@@ -64,8 +64,6 @@ const HowItWorks = () => {
           />
         </div>
       </div>
-
-      {/* Call to Action */}
       <div className="flex justify-center items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-fit justify-center items-center gap-4 mt-12">
           <a
@@ -81,13 +79,35 @@ const HowItWorks = () => {
             </motion.button>
           </a>
           <motion.button
+            onClick={showModal}
             whileHover={{ scale: 1.01 }}
-            className=" text-center justify-center border border-gray-500 text-black hover:text-white hover:bg-gray-700 px-6 py-3 rounded shadow-lg transition flex items-center gap-2"
+            className="text-center justify-center border border-gray-500 text-black hover:text-white hover:bg-gray-700 px-6 py-3 rounded shadow-lg transition flex items-center gap-2"
           >
             <span>▶</span> Watch Video
           </motion.button>
         </div>
       </div>
+
+      <Modal
+        title="How It Works Video"
+        open={isModalOpen}
+        onCancel={handleCancel}
+        footer={null}
+        width={800}
+        centered
+      >
+        <div className="aspect-w-16 aspect-h-9">
+          <iframe
+            width="100%"
+            height="450"
+            src="https://www.youtube.com/embed/5bM8qetHJxA"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Modal>
     </div>
   );
 };

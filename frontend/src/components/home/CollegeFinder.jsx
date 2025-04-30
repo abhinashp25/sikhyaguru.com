@@ -1,71 +1,108 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { motion } from "framer-motion";
 import {
-  Brain,
-  Building2,
-  Users,
-  Stethoscope,
-  FlaskRound,
-  Hotel,
-  MonitorSmartphone,
-  BookOpen,
-  Radio,
-  Syringe,
-  GraduationCap,
-  Gavel,
-  HeartPulse,
-  Smile,
-  Palette,
-  School,
+  Brain, Building2, Users, Stethoscope, FlaskRound, Hotel,
+  MonitorSmartphone, BookOpen, Radio, Syringe, GraduationCap,
+  Gavel, HeartPulse, Smile, Palette, School, AlertCircle
 } from "lucide-react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import NoCollegesFound from "../college/NoCollegesFound";
 
-const categories = [
-  { icon: Brain, name: "Engineering", colleges: "6077 Colleges" },
-  { icon: Building2, name: "Commerce & Banking", colleges: "4432 Colleges" },
-  { icon: Users, name: "Management", colleges: "7027 Colleges" },
-  { icon: Stethoscope, name: "Medical", colleges: "2421 Colleges" },
-  { icon: FlaskRound, name: "Sciences", colleges: "5037 Colleges" },
-  { icon: Hotel, name: "Hotel Management", colleges: "1309 Colleges" },
-  {
-    icon: MonitorSmartphone,
-    name: "Information Technology",
-    colleges: "5205 Colleges",
-  },
-  { icon: BookOpen, name: "Arts & Humanities", colleges: "5227 Colleges" },
-  { icon: Radio, name: "Mass Communication", colleges: "2168 Colleges" },
-  { icon: Syringe, name: "Nursing", colleges: "1195 Colleges" },
-  { icon: GraduationCap, name: "Agriculture", colleges: "444 Colleges" },
-  { icon: Palette, name: "Design", colleges: "955 Colleges" },
-  { icon: HeartPulse, name: "Pharmacy", colleges: "1892 Colleges" },
-  { icon: Gavel, name: "Law", colleges: "1015 Colleges" },
-  { icon: HeartPulse, name: "Paramedical", colleges: "1507 Colleges" },
-  { icon: Smile, name: "Dental", colleges: "350 Colleges" },
-  { icon: Palette, name: "Performing Arts", colleges: "707 Colleges" },
-  { icon: School, name: "Education", colleges: "4561 Colleges" },
-];
+const categoryIcons = {
+  Engineering: Brain,
+  "Commerce & Banking": Building2,
+  Management: Users,
+  Medical: Stethoscope,
+  Sciences: FlaskRound,
+  "Hotel Management": Hotel,
+  "Information Technology": MonitorSmartphone,
+  "Arts & Humanities": BookOpen,
+  "Mass Communication": Radio,
+  Nursing: Syringe,
+  Agriculture: GraduationCap,
+  Design: Palette,
+  Pharmacy: HeartPulse,
+  Law: Gavel,
+  Paramedical: HeartPulse,
+  Dental: Smile,
+  "Performing Arts": Palette,
+  Education: School,
+};
 
 export default function CollegeFinder() {
   const [activeTab, setActiveTab] = useState("colleges");
+  const [collegeData, setCollegeData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/skguru/api/v0/colleges")
+      .then((res) => {
+        setCollegeData(res.data.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching college data:", err);
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+  const categoryCounts = Object.keys(categoryIcons).map((categoryName) => {
+    const count = collegeData.filter(college => college.collegeType === categoryName).length;
+    return {
+      icon: categoryIcons[categoryName],
+      name: categoryName,
+      count: count,
+      colleges: count === 0 ? "No colleges" : `${count} ${count === 1 ? 'College' : 'Colleges'}`,
+    };
+  });
+
+  const handleCategoryClick = (category) => {
+    if (category.count === 0) {
+      setSelectedCategory(category.name);
+    } else {
+      navigate("/colleges", { state: { filter: category.name } });
+    }
+  };
+
+  const handleBackToCategories = () => {
+    setSelectedCategory(null);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
+    visible: { opacity: 1, y: 0 },
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <NoCollegesFound />;
+  }
+
+  if (selectedCategory) {
+    return (
+      <NoCollegesFound onBack={handleBackToCategories} />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white p-6 md:p-12">
@@ -87,37 +124,26 @@ export default function CollegeFinder() {
             colleges, exams, courses and careers based on your area of interest!
           </p>
 
-          {/* Custom Tabs */}
           <div className="flex justify-center mb-8">
             <div className="inline-flex bg-gray-100 rounded-lg p-1">
               <button
                 onClick={() => setActiveTab("colleges")}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  activeTab === "colleges"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${activeTab === "colleges"
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
-                }`}
+                  }`}
               >
                 Colleges
               </button>
               <button
                 onClick={() => setActiveTab("exams")}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  activeTab === "exams"
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${activeTab === "exams"
                     ? "bg-white text-gray-900 shadow-sm"
                     : "text-gray-500 hover:text-gray-900"
-                }`}
+                  }`}
               >
                 Exams
               </button>
-              {/* <button
-                onClick={() => setActiveTab("abroad")}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  activeTab === "abroad" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-900"
-                }`}
-              >
-                Study Abroad
-              </button> */}
             </div>
           </div>
         </motion.div>
@@ -126,92 +152,19 @@ export default function CollegeFinder() {
           variants={containerVariants}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
         >
-          {categories.map((category, index) => (
-            // <motion.div
-            // onClick={() => navigate("/colleges")}
-            //   key={index}
-            //   variants={itemVariants}
-            //   whileHover={{ scale: 1.05 }}
-            //   className="group relative bg-white rounded-lg p-4 text-center border hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer"
-            // >
-            //   <div className="flex flex-col items-center gap-3">
-            //     <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 group-hover:bg-blue-50 transition-colors duration-300">
-            //       <category.icon className="w-6 h-6 text-gray-600 group-hover:text-blue-500 transition-colors duration-300" />
-            //     </div>
-            //     <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-            //       {category.name}
-            //     </h3>
-            //     <p className="text-sm text-gray-500">{category.colleges}</p>
-            //   </div>
-            // </motion.div>
-
-            // <motion.div
-            //   onClick={() => navigate("/colleges")}
-            //   key={index}
-            //   variants={itemVariants}
-            //   whileHover={{ scale: 1.05 }}
-            //   className="group relative bg-white rounded-lg p-4 text-center border hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer"
-            // >
-            //   <div className="flex flex-col items-center gap-3">
-            //     <motion.div
-            //       className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 group-hover:bg-blue-50 transition-colors duration-300"
-            //       whileHover={{
-            //         y: [0, -3, 3, -3, 0], // Creates an up-down vibration effect
-            //         transition: {
-            //           duration: 0.3,
-            //           repeat: Infinity,
-            //           ease: "easeInOut",
-            //         },
-            //       }}
-            //     >
-            //       <category.icon className="w-6 h-6 text-gray-600 group-hover:text-blue-500 transition-colors duration-300" />
-            //     </motion.div>
-            //     <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-            //       {category.name}
-            //     </h3>
-            //     <p className="text-sm text-gray-500">{category.colleges}</p>
-            //   </div>
-            // </motion.div>
-
-            // <motion.div
-            //   onClick={() => navigate("/colleges")}
-            //   key={index}
-            //   variants={itemVariants}
-            //   whileHover={{ scale: 1.05 }}
-            //   className="group relative bg-white rounded-lg p-4 text-center border hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer"
-            // >
-            //   <div className="flex flex-col items-center gap-3">
-            //     <motion.div
-            //       className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 group-hover:bg-blue-50 transition-colors duration-300"
-            //       animate={{ x: [0, -2, 2, -2, 0] }} // Side-to-side vibration effect
-            //       transition={{
-            //         duration: 0.2,
-            //         repeat: Infinity,
-            //         ease: "easeInOut",
-            //       }}
-            //     >
-            //       <category.icon className="w-6 h-6 text-gray-600 group-hover:text-blue-500 transition-colors duration-300" />
-            //     </motion.div>
-            //     <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-            //       {category.name}
-            //     </h3>
-            //     <p className="text-sm text-gray-500">{category.colleges}</p>
-            //   </div>
-            // </motion.div>
-
+          {categoryCounts.map((category, index) => (
             <motion.div
-              onClick={() => navigate("/colleges")}
+              onClick={() => handleCategoryClick(category)}
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
-              
               className="group relative bg-white rounded-lg p-4 text-center border hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
               <div className="flex flex-col items-center gap-3">
                 <motion.div
-                  className="w-12 h-12 flex items-center   justify-center rounded-full bg-gray-50 group-hover:bg-blue-50 transition-colors duration-300"
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 group-hover:bg-blue-50 transition-colors duration-300"
                   whileHover={{
-                    y: [-2, 2, -2, 0], // Up-down vibration effect
+                    y: [-2, 2, -2, 0],
                     transition: {
                       duration: 0.2,
                       repeat: Infinity,
@@ -224,7 +177,9 @@ export default function CollegeFinder() {
                 <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                   {category.name}
                 </h3>
-                <p className="text-sm text-gray-500">{category.colleges}</p>
+                <p className={`text-sm ${category.count === 0 ? 'text-gray-500' : 'text-gray-600'}`}>
+                  {category.colleges}
+                </p>
               </div>
             </motion.div>
           ))}

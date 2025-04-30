@@ -10,12 +10,13 @@ import { useEffect } from 'react';
 import CollegeList from './components/college/CollegeList';
 import NotFound from './components/common/PageNotFound';
 import CollegeMain from './components/college/CollegeMain';
+import Features from './pages/Features';
 
 
 function App() {
   const location = useLocation();
   useEffect(() => {
-    console.log("I am running");
+    // console.log("I am running");
    // window.scrollTo(600, 0);
     AOS.init({
       offset: 100,
@@ -33,6 +34,7 @@ function App() {
         <Route path="colleges" element={<CollegeList/>} />
         <Route path="college" element={<CollegeMain/>} />
         <Route path="about" element={<About/>} />
+        <Route path="features" element={<Features/>} />
         <Route path="*" element={<NotFound/>} />
       </Route>
     </Routes>
