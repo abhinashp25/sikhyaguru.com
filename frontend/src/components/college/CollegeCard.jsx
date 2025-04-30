@@ -30,7 +30,7 @@ const CollegeCard = ({ college , isNameOnly = false}) => {
       let collegeId = college._id;
       if (isNameOnly && !college._id) {
         const searchResponse = await axios.get(
-          `${import.meta.env.VITE_APP_BACKEND_URI}/api/v0/colleges?name=${encodeURIComponent(college.name)}`
+          `${import.meta.env.REACT_APP_BACKEND_URI}/api/v0/colleges?name=${encodeURIComponent(college.name)}`
         );
         if (searchResponse.data.data.length > 0) {
           collegeId = searchResponse.data.data[0]._id; 
@@ -40,7 +40,7 @@ const CollegeCard = ({ college , isNameOnly = false}) => {
       }
 
       const response = await axios.get(
-        `${import.meta.env.VITE_APP_BACKEND_URI}/api/v0/colleges/${collegeId}`
+        `${import.meta.env.REACT_APP_BACKEND_URI}/api/v0/colleges/${collegeId}`
       );
       navigate("/college", { state: { collegeData: response.data.data } });
     } catch (error) {

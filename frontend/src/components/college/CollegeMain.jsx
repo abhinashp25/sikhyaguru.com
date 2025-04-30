@@ -58,7 +58,7 @@ function CollegeMain() {
         const collegeId = new URLSearchParams(window.location.search).get('id');
         try {
           setLoading(true);
-          const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND_URI}/api/v0/colleges/${collegeData?._id}`);
+          const response = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URI}/api/v0/colleges/${collegeData?._id}`);
           setCollegeData(response.data.data);
         } catch (error) {
           console.error("Error fetching college data:", error);
