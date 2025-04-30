@@ -51,6 +51,8 @@ function CollegeMain() {
     { id: "reviews", label: "Reviews" },
   ];
 
+
+  //demo
   useEffect(() => {
 
     if (!location.state?.collegeData) {
