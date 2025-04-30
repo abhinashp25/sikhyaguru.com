@@ -70,7 +70,7 @@ const HeroSection = ({ colleges = [] }) => {
   const fetchCollegeDetails = async (collegeId) => {
     try {
       setIsFetchingDetails(true);
-      const response = await fetch(`${import.meta.env.VITE_APP_BACKEND_URI}/api/v0/colleges/${collegeId}`);
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v0/colleges/${collegeId}`);
       const data = await response.json();
       
       if (data.success) {

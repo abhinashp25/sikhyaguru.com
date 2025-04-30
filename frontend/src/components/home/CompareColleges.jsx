@@ -24,7 +24,7 @@ const CompareColleges = () => {
   useEffect(() => {
     const fetchColleges = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_APP_BACKEND_URI}/api/v0/colleges`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/v0/colleges`);
         setColleges(response.data.data);
         setLoading(false);
       } catch (err) {
