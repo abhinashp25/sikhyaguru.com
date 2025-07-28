@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import heroVideo3 from "../../assests/heroVideo2.mp4";
 import { AutoComplete, Modal, Button, Spin } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -154,7 +153,7 @@ const HeroSection = ({ colleges = [] }) => {
       {/* Background Video */}
       <video
         className="absolute inset-0 object-cover w-full h-full"
-        src={heroVideo3}
+        src={"https://res.cloudinary.com/dsfj4rxmf/video/upload/v1750495741/heroVideo2_xetpsx.mp4"}
         autoPlay
         loop
         muted
