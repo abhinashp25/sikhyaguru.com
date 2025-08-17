@@ -81,8 +81,8 @@ function CollegeMain() {
   }
 
   return (
-    <div className="bg-gray-50">
-      <div className="relative h-[600px]">
+    <div className="bg-gray-100  w-screen  ">
+      <div className="relative w-full h-[600px]">
         <div className="absolute inset-0 bg-black/80"></div>
         {console.log("collegeData", collegeData)}
         <img
@@ -114,7 +114,7 @@ function CollegeMain() {
                       <Calendar className="w-4 h-4" /> Est. {collegeData.collegeInfo.established}
                     </span>
                     {collegeData.academicExcellence?.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap w-full overflow-hidden gap-2">
                         {collegeData.academicExcellence.map((item, index) => (
                           <span
                             key={index}

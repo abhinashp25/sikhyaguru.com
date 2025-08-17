@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../common/Button";
 
 const FAQAccordion = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(5);
 
   const faqs = [
     {
@@ -28,7 +28,7 @@ const FAQAccordion = () => {
     {
       question: "How can I contact the admissions office?",
       answer:
-        "You can reach the admissions office via email at admissions@college.edu or call us at (123) 456-7890.",
+        "You can reach the admissions office via email at kumarlalitamohanty@gmail.com or call us at (+91) 7735381142.",
     },
   ];
 
